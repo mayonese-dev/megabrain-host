@@ -34,6 +34,8 @@ function Index() {
 
   if (mode === "loading") return <DialUpLoader onDone={() => setMode("retro")} />;
   if (mode === "retro")
-    return <RetroSite onRevert={() => setMode("minimal")} win98={dark} onToggleWin98={toggleDark} />;
+    return (
+      <RetroSite onRevert={() => setMode("minimal")} win98={dark} onToggleWin98={toggleDark} />
+    );
   return <MinimalSite onConvert={() => setMode("loading")} dark={dark} onToggleDark={toggleDark} />;
 }

@@ -16,7 +16,8 @@ export function NetworkStatus({ variant }: { variant: "minimal" | "retro" }) {
     return () => clearInterval(i);
   }, []);
 
-  const jitter = (n: number, seed: number) => Math.min(96, Math.max(6, n + ((tick + seed) % 5) * 3 - 6));
+  const jitter = (n: number, seed: number) =>
+    Math.min(96, Math.max(6, n + ((tick + seed) % 5) * 3 - 6));
 
   if (retro) {
     return (
@@ -24,7 +25,9 @@ export function NetworkStatus({ variant }: { variant: "minimal" | "retro" }) {
         <h2 className="text-center text-4xl">◉ STATUS DA REDE — AO VIVO!</h2>
         <p className="mt-1 text-center text-lg">
           Uptime global: <b>99,99%</b> · Latência média: <b>12 ms</b> ·{" "}
-          <span className="retro-blink text-[oklch(0.5_0.18_140)]">TODOS OS SISTEMAS OPERANTES</span>
+          <span className="retro-blink text-[oklch(0.5_0.18_140)]">
+            TODOS OS SISTEMAS OPERANTES
+          </span>
         </p>
         <div className="mt-5 grid gap-3 sm:grid-cols-2">
           {DATACENTERS.map((d, i) => (
@@ -38,7 +41,9 @@ export function NetworkStatus({ variant }: { variant: "minimal" | "retro" }) {
               <div className="mt-2 h-4 border-2 border-[oklch(0.35_0.1_250/0.5)] bg-[oklch(1_0_0/0.8)]">
                 <div className="dialup-bar h-full" style={{ width: `${jitter(d.load, i)}%` }} />
               </div>
-              <p className="text-base">carga {jitter(d.load, i)}% · ping {8 + ((tick + i) % 7)} ms</p>
+              <p className="text-base">
+                carga {jitter(d.load, i)}% · ping {8 + ((tick + i) % 7)} ms
+              </p>
             </div>
           ))}
         </div>

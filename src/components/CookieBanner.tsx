@@ -85,7 +85,9 @@ export function CookieBanner({ variant }: Props) {
                   className="mt-1"
                 />
                 <span>
-                  <span className={retro ? "font-retro-display text-xl" : "text-sm"}>{p.label}</span>
+                  <span className={retro ? "font-retro-display text-xl" : "text-sm"}>
+                    {p.label}
+                  </span>
                   <span className={retro ? "block text-base" : "block text-xs text-ink/50"}>
                     {p.note}
                   </span>

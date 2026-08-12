@@ -50,7 +50,6 @@ export function RetroSite({
         </div>
       </header>
 
-
       <main className="mx-auto max-w-5xl space-y-6 px-4 py-6">
         <section className="aero-panel overflow-hidden">
           <img
@@ -103,7 +102,8 @@ export function RetroSite({
         <section id="planos" className="aero-panel p-6">
           <h2 className="text-center text-4xl">-=[ PLANOS ]=-</h2>
           <p className="mt-1 text-center text-lg">
-            Sem taxa de setup. Cancele quando quiser. <b className="text-[oklch(0.55_0.22_25)]">PROMOÇÃO!</b>
+            Sem taxa de setup. Cancele quando quiser.{" "}
+            <b className="text-[oklch(0.55_0.22_25)]">PROMOÇÃO!</b>
           </p>
           <div className="mt-6 grid gap-5 md:grid-cols-3">
             {PLANS.map((p) => (
@@ -157,7 +157,10 @@ export function RetroSite({
           <h2 className="text-center text-4xl">F.A.Q. — PERGUNTAS FREQUENTES</h2>
           <div className="mt-5 space-y-4">
             {FAQ.map((f) => (
-              <div key={f.q} className="border-l-8 border-[oklch(0.7_0.19_140)] bg-[oklch(1_0_0/0.6)] p-4">
+              <div
+                key={f.q}
+                className="border-l-8 border-[oklch(0.7_0.19_140)] bg-[oklch(1_0_0/0.6)] p-4"
+              >
                 <h3 className="text-2xl">? {f.q}</h3>
                 <p className="text-lg">{f.a}</p>
               </div>
@@ -192,6 +195,5 @@ export function RetroSite({
       <SupportChat variant="retro" />
       <CookieBanner variant="retro" />
     </div>
-
   );
 }

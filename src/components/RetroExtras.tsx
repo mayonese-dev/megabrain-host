@@ -5,7 +5,11 @@ const BASE_VISITS = 184203;
 const SEED_ENTRIES = [
   { name: "xX_dark_finch_Xx", city: "Curitiba", text: "site mais rápido que meu 56k, parabéns!!!" },
   { name: "mari_2001", city: "Recife", text: "adorei o contador de visitas, muito profissional" },
-  { name: "webmaster_junior", city: "Rio de Janeiro", text: "coloquei o banner de vocês no meu site ;)" },
+  {
+    name: "webmaster_junior",
+    city: "Rio de Janeiro",
+    text: "coloquei o banner de vocês no meu site ;)",
+  },
 ];
 
 export function VisitorCounter() {
@@ -45,7 +49,10 @@ export function Guestbook() {
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !text.trim()) return;
-    setEntries((s) => [{ name: name.trim(), city: city.trim() || "internet", text: text.trim() }, ...s]);
+    setEntries((s) => [
+      { name: name.trim(), city: city.trim() || "internet", text: text.trim() },
+      ...s,
+    ]);
     setName("");
     setCity("");
     setText("");

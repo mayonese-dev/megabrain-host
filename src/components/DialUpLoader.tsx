@@ -53,7 +53,10 @@ export function DialUpLoader({ onDone }: { onDone: () => void }) {
         <div className="space-y-4 p-5 text-[oklch(0.2_0.02_250)]">
           <p className="font-retro-display text-2xl">{step}</p>
           <div className="h-6 border-2 border-[oklch(0.45_0.02_250)] bg-[oklch(0.95_0.01_250)] p-[3px]">
-            <div className="dialup-bar h-full transition-[width] duration-200" style={{ width: `${progress}%` }} />
+            <div
+              className="dialup-bar h-full transition-[width] duration-200"
+              style={{ width: `${progress}%` }}
+            />
           </div>
           <div className="flex justify-between font-retro-display text-xl">
             <span>{Math.floor(progress)}% concluído</span>
